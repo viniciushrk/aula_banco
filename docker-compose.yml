@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+  database:
+    hostname: database
+    container_name: "aula_banco_sapiens"
+    image: "mysql:8.0.17"
+    environment:
+      - "MYSQL_ROOT_PASSWORD=root"
+      - "MYSQL_DATABASE=aula_banco_sapiens"
+    ports:
+      - '3306:3306'
+    # volumes:
+      # - ./.docker/backups:/backupsC
+      # - "./:/var/lib/mysql"
+      # - '~/.ssh/id_rsa:/root/.ssh/id_rsa'
+
+volumes:
+  dbdata:
+    driver: local
